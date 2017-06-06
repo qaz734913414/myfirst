@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <meta charset="utf-8">
+		<title>青青世界之侠者江湖</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+		<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">	
+        <link rel="icon" type="image/png" href="data/img/gui/common/favicon.png">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <link rel="stylesheet" href="css/achievements.css" type="text/css">
+
+        <script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/lib/melonJS-2.1.3-development.js"></script>
+        <script type="text/javascript" src="js/lib/modernizr.js"></script>
+		<script type="text/javascript" src="js/lib/log.js"></script>
+        <script type="text/javascript" src="js/plugins/debug/debugPanel.js"></script>
+		<!-- Game Scripts -->
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/game/detect.js"></script>
+		<script type="text/javascript" src="js/game/app.js"></script>
+		<script type="text/javascript" src="js/game/game.js"></script>
+		<script type="text/javascript" src="js/game/resources.js"></script>
+		<script type="text/javascript" src="js/game/storage.js"></script>
+        <script type="text/javascript" src="js/game/quest.js"></script>
+        <script type="text/javascript" src="js/game/event.js"></script>
+		<script type="text/javascript" src="js/screens/play.js"></script>
+		<script type="text/javascript" src="js/screens/dialog.js"></script>
+        <script type="text/javascript" src="js/screens/door.js"></script>
+
+		<script type="text/javascript" src="js/entities/player.js"></script>
+        <script type="text/javascript" src="js/entities/flare.js"></script>
+        <script type="text/javascript" src="js/entities/explod.js"></script>
+        <script type="text/javascript" src="js/entities/enemy.js"></script>
+		<script type="text/javascript" src="js/entities/enemys.js"></script>
+        <script type="text/javascript" src="js/entities/ghost.js"></script>
+        <script type="text/javascript" src="js/entities/coin.js"></script>
+        <script type="text/javascript" src="js/entities/flask.js"></script>
+	</head>
+	<body class="intro">
+	    <noscript>
+	       <div class="alert">
+               只有开启浏览器的JavaScript功能，才能继续游戏。
+	       </div>
+	    </noscript>
+	    <a id="moztab" class="clickable" target="_blank" href="http://my.oschina.net/eternal/blog?catalog=530457"></a>
+	    <div id="intro">
+	        <h1 id="logo">
+	           <span id="logosparks">
+	               
+	           </span>
+	        </h1>
+	        <article id="portrait">
+	            <p>
+                   旋转的手机为横屏模式
+	            </p>
+	            <div id="tilt"></div>
+	        </article>
+	        <section id="parchment" class="createcharacter">
+	            <div class="parchment-left"></div>
+	            <div class="parchment-middle">
+                    <article id="createcharacter">
+          	           <h1>
+          	               <span class="left-ornament"></span>
+          	               现在该是进入江湖的时间了，请创建人物
+          	               <span class="right-ornament"></span>
+                         </h1>
+                         <div id="character" class="disabled">
+                             <div></div>
+                         </div>
+                         <form action="none" method="get" accept-charset="utf-8">
+                             <input type="text" id="nameinput" class="stroke" name="player-name" placeholder="人物名称" maxlength="15">
+                         </form>
+                         <div class="play button disabled">
+                             <div></div>
+                             <img src="data/img/gui/common/spinner.gif" alt="">
+                         </div>
+                         <div class="ribbon">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                         </div>
+                    </article>
+                    <article id="loadcharacter">
+          	           <h1>
+          	               <span class="left-ornament"></span>
+          	               江湖之中已经有这号人物了
+          	               <span class="right-ornament"></span>
+                         </h1>
+                         <div class="ribbon">
+                            <div class="top"></div>
+                            <div class="bottom"></div>
+                         </div>
+                         <img id="playerimage" src="">
+                         <div id="playername" class="stroke">
+                         </div>
+                         <div class="play button">
+                             <div></div>
+                             <img src="data/img/gui/common/spinner.gif" alt="">
+                         </div>
+                         <div id="create-new">
+                            <span><span>或者</span> 建立新人物</span>
+                         </div>
+                    </article>
+                    <article id="confirmation">
+          	           <h1>
+          	               <span class="left-ornament"></span>
+          	               删除人物？
+          	               <span class="right-ornament"></span>
+                         </h1>
+                         <p>
+                             人物所有信息将会被删除。<br>
+                             确定继续吗？
+                         </p>
+                         <div class="delete button"></div>
+                         <div id="cancel">
+                            <span>取消</span>
+                         </div>
+                    </article>
+    	            <article id="credits">
+        	            <h1>
+         	               <span class="left-ornament"></span>
+         	               <span class="title">
+         	                   游戏开发 <a target="_blank" class="stroke clickable" href="http://my.oschina.net/eternal/blog">小树团队</a>
+         	               </span>
+         	               <span class="right-ornament"></span>
+                        </h1>
+                        <div id="authors">
+                            <div id="guillaume">
+                                <div class="avatar"></div>
+                                美工
+                                <a class="stroke clickable" target="_blank" href="http://my.oschina.net/eternal/blog">小树</a>
+                            </div>
+                            <div id="franck">
+                                <div class="avatar"></div>
+                                代码
+                                <a class="stroke clickable" target="_blank" href="http://my.oschina.net/eternal/blog">小树</a>
+                            </div>
+                        </div>
+                        <div id="seb">策划、设计、音乐等均为小树</div>
+	                    <div id="close-credits">
+	                        <span>- 点击界面返回 -</span>
+                        </div>
+    	            </article>
+    	            <article id="about">
+        	            <h1>
+         	               <span class="left-ornament"></span>
+         	               <span class="title">
+         	                   游戏介绍
+         	               </span>
+         	               <span class="right-ornament"></span>
+                        </h1>
+                        <p id="game-desc">十步杀一人，千里不留行。事了拂衣去，深藏身与名。</p>
+                        <div class="left">
+                            <p>
+                                在游戏中，穿越时空回到江湖时代，这里充满了未知的秘密等待你去探索，而你化身为村中的一位少年，为了拯救村庄是自己不断强大，你必须找出这其中的原因，拯救村庄，拯救这个世界！
+                            </p>
+                        </div>
+                        <div class="right">
+                            <p>
+                                游戏中隐藏者众多的大侠，高人，隐者，找到他们完成他们的要求，你会学到很多强大的技能或得到神兵保甲！
+                            </p>
+                        </div>
+	                    <div id="close-about">
+	                        <span>- 点击界面返回 -</span>
+                        </div>
+    	            </article>
+    	            <article id="death">
+                        <p>饮恨江湖。。。</p>
+    					<div id="respawn" class="button"></div>
+    	            </article>
+                    <article id="error">
+          	           <h1>
+          	               <span class="left-ornament"></span>
+          	               浏览器版本过低不支持游戏！
+          	               <span class="right-ornament"></span>
+                         </h1>
+                         <p>
+                             浏览器必须支持WebSockets功能，才能正常进入游戏。<br>
+                             建议使用谷歌浏览器Chrome。
+                         </p>
+                    </article>
+	            </div>
+	            <div class="parchment-right"></div>
+	        </section>
+	    </div>
+		<div id="container">
+		    <div id="canvasborder">
+		        <article id="instructions" class="clickable">
+		            <div class="close"></div>
+		            <h1>
+     	               <span class="left-ornament"></span>
+     	               游戏帮助
+     	               <span class="right-ornament"></span>
+	                </h1>
+	                <ul>
+	                   <li><span class="icon"></span>鼠标打开面板，WSAD移动人物，JKLU释放技能（手机平板时对应虚拟按键）。</li>
+	                   <li><span class="icon"></span>按下ENTER键开始聊天。</li>
+	                   <li><span class="icon"></span>人物信息会自动存储。</li>
+	                </ul>
+	                    <p>- 点击界面返回 -</p>
+		        </article>
+		        <article id="achievements" class="page1 clickable">
+		            <div class="close"></div>
+		            <div id="achievements-wrapper">
+		                <div id="lists">
+        		        </div>
+    		        </div>
+    		        <div id="achievements-count" class="stroke">
+    		            Completed
+    		            <div>
+    		                <span id="unlocked-achievements">0</span>
+    		                /
+    		                <span id="total-achievements"></span>
+    		            </div> 
+    		        </div>
+		            <nav class="clickable">
+		                <div id="previous"></div>
+		                <div id="next"></div>
+		            </nav>
+		        </article>
+    			<div id="canvas"></div>
+    			<div id="bubbles"></div>
+    			<div id="achievement-notification">
+    			    <div class="coin">
+    			        <div id="coinsparks"></div>
+    			    </div>
+    			    <div id="achievement-info">
+        			    <div class="title">New Achievement Unlocked!</div>
+        			    <div class="name"></div>
+    			    </div>
+    			</div>
+    			<div id="bar-container">
+					<div id="healthbar">
+                        <div id="lvl">88</div>
+					</div>
+					<div id="hitpoints">
+					</div>
+					<div id="weapon"></div>
+					<div id="armor"></div>
+					<div id="notifications">
+					    <div>
+					       <span id="message1"></span>
+					       <span id="message2"></span>
+					    </div>
+					</div>
+                    <div id="playercount" class="clickable">
+                        <span class="count">6</span> <span>位好友</span>
+                    </div>
+                    <div id="barbuttons">
+                        <div id="chatbutton" class="barbutton clickable"></div>
+                        <div id="achievementsbutton" class="barbutton clickable"></div>
+                        <div id="helpbutton" class="barbutton clickable"></div>
+                        <div id="mutebutton" class="barbutton clickable active"></div>
+                    </div>
+    			</div>
+				<div id="chatbox">
+				    <form action="none" method="get" accept-charset="utf-8">
+					    <input id="chatinput" class="gp" type="text" maxlength="60">
+				    </form>
+				</div>
+                <div id="population">
+                    <div id="instance-population" class="">
+                        <span>夜小树，随风流逝的昨天</span> <span>青城道士</span>
+                    </div>
+                    <div id="world-population" class="">
+                        <span>无敌小仙，放荡不羁</span> <span>三脚猫</span>
+                    </div>
+                </div>
+		    </div>
+		</div>
+		<footer>
+		    <div id="sharing" class="clickable">
+		      Copyright © 2016 Sapling
+		    </div>
+		    <div id="credits-link" class="clickable">
+		      – <span id="toggle-credits">作者</span>
+		    </div>
+		</footer>
+		
+		<ul id="page-tmpl" class="clickable" style="display:none">
+        </ul>
+        <ul>
+            <li id="achievement-tmpl" style="display:none">
+                <div class="coin"></div>
+                <span class="achievement-name">???</span>
+                <span class="achievement-description">???</span>
+                <div class="achievement-sharing">
+                  <a href="" class="twitter"></a>
+                </div>
+            </li>
+        </ul>
+        
+        <img src="data/img/gui/common/thingy.png" alt="" class="preload">
+        
+        <div id="resize-check"></div>
+		
+        <script type="text/javascript">
+
+        </script>
+	</body>
+</html>

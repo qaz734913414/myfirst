@@ -1,0 +1,36 @@
+{"frames": [
+
+{
+	"filename": "009.png",
+	"frame": {"x":0,"y":0,"w":700,"h":580},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":700,"h":580},
+	"sourceSize": {"w":700,"h":580}
+},
+{
+	"filename": "block.png",
+	"frame": {"x":818,"y":0,"w":50,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":50},
+	"sourceSize": {"w":50,"h":50}
+},
+{
+	"filename": "sleep.png",
+	"frame": {"x":700,"y":0,"w":118,"h":83},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":118,"h":83},
+	"sourceSize": {"w":118,"h":83}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker ",
+	"version": "1.0",
+	"image": "taoist_room.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:efcb4a8f92c0c5090ad8260074fcc23d:07da86c2a0324a24c92afd9fd1fe13a5:31aeeb47c51c725c678ebbde49766d46$"
+}
+}
